@@ -1,0 +1,30 @@
+.upload-csv-container {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #1f1e1e;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.processing {
+  color: #007bff;
+  font-style: italic;
+}
+
+.message {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+}

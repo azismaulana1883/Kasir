@@ -1,0 +1,295 @@
+/* Variabel CSS untuk konsistensi */
+:root {
+  --primary-color: #4caf50;
+  --primary-hover: #43a047;
+  --secondary-color: #2196f3;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #ddd;
+  --shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --radius: 8px;
+}
+
+/* Reset dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+/* Container utama */
+.kasir-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.kasir-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+/* Form Input */
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-input input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  outline: none;
+  font-size: 16px; /* Ukuran font lebih besar untuk mobile */
+  transition: border 0.2s;
+  width: 100%;
+}
+
+.form-input input:focus {
+  border-color: var(--primary-color);
+}
+
+.form-input button {
+  padding: 12px 16px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.form-input button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Komponen Upload CSV */
+.upload-csv-container {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--light-gray);
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-input {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  width: 100%;
+}
+
+.processing {
+  color: var(--secondary-color);
+  font-style: italic;
+  text-align: center;
+}
+
+.message {
+  padding: 10px;
+  border-radius: var(--radius);
+  background-color: #e9ecef;
+  text-align: center;
+}
+
+/* Table Belanja */
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.table-belanja {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px; /* Minimum width untuk table */
+}
+
+.table-belanja th,
+.table-belanja td {
+  border: 1px solid var(--border-color);
+  padding: 12px 8px;
+  text-align: left;
+}
+
+.table-belanja th {
+  background-color: var(--primary-color);
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.table-belanja tr:nth-child(even) {
+  background-color: var(--light-gray);
+}
+
+.table-belanja tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-belanja td[colspan="3"] {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Tombol hapus */
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Header dengan total */
+.header-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.total-harga {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: var(--radius);
+  font-weight: bold;
+}
+
+/* Media Queries untuk Responsivitas */
+
+/* Tablet */
+@media (min-width: 600px) {
+  .kasir-container {
+    max-width: 90%;
+    padding: 20px;
+  }
+  
+  .form-input {
+    flex-direction: row;
+  }
+  
+  .form-input input {
+    flex: 1;
+  }
+  
+  .form-input button {
+    width: auto;
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .kasir-container {
+    max-width: 700px;
+  }
+  
+  body {
+    padding: 20px;
+  }
+}
+
+/* Tampilan mobile khusus untuk tabel */
+@media (max-width: 600px) {
+  .table-belanja {
+    font-size: 14px;
+  }
+  
+  .table-belanja th,
+  .table-belanja td {
+    padding: 8px 5px;
+  }
+  
+  /* Untuk layar sangat kecil, buat tabel lebih compact */
+  @media (max-width: 400px) {
+    .table-belanja {
+      font-size: 12px;
+    }
+    
+    .delete-btn {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  }
+}
+
+/* Animasi untuk menambah item baru */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.table-belanja tr {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Loading state */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Style untuk input file yang lebih menarik */
+.file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-input-wrapper input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-input-button {
+  display: block;
+  padding: 12px 20px;
+  background: var(--secondary-color);
+  color: white;
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.file-input-button:hover {
+  background: #0b7dda;
+}
