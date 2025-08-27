@@ -12,8 +12,11 @@ function Kasir() {
   const [namaBarang, setNamaBarang] = useState("");
   const [harga, setHarga] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const API_URL = "http://192.168.100.13:5000/api/belanja";
-  const SOCKET_URL = "http://192.168.100.13:5000";
+  // const API_URL = "https://blueswift.onpella.app/:5000/api/belanja";
+  // const SOCKET_URL = "https://blueswift.onpella.app/:5000";
+  const API_URL = "https://blueswift.onpella.app/api/belanja";
+  const SOCKET_URL = "https://blueswift.onpella.app";
+
 
   useEffect(() => {
     const socket = io(SOCKET_URL);
